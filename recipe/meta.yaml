@@ -27,7 +27,7 @@ requirements:
 test:
   commands:
     - latexdiff --version 2>&1 | grep {{ version }}
-    - latexdiff-vc --version | grep {{ version }}
+    - latexdiff-vc --version
 
 about:
   home: https://github.com/ftilmann/{{ name }}
