@@ -10,10 +10,10 @@ source:
   sha256: fe28ed8586c77fbdc74911db44cbe81d7b7216b361d4df54692c0c3c5ff449c4
 
 build:
-  number: 0
+  number: 1
   noarch: generic
   script:
-    - cp {{ name }} $PREFIX/bin/
+    - cp {{ name }} {{ name }}-vc $PREFIX/bin/
 
 requirements:
   build:
@@ -27,6 +27,7 @@ requirements:
 test:
   commands:
     - latexdiff --version 2>&1 | grep {{ version }}
+    - latexdiff-vc --version 2>&1 | grep {{ version }}
 
 about:
   home: https://github.com/ftilmann/{{ name }}
