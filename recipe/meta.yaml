@@ -1,5 +1,5 @@
 {% set name = "latexdiff" %}
-{% set version = "1.3.4" %}
+{% set version = "1.4.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/ftilmann/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: f56afb9863ee9d5abc411bb947c89bdbc07070a928a5420d86e40e351fa41b94
+  sha256: 039501789090b2604edaa7e7f76605b949a39fc0a44935805cdb1e3d205e4883
 
 build:
   number: 0
