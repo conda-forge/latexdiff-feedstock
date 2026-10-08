@@ -1,0 +1,43 @@
+schema_version: 1
+
+context:
+  version: "1.4.0"
+
+package:
+  name: latexdiff
+  version: ${{ version }}
+
+source:
+  url: https://github.com/ftilmann/latexdiff/archive/${{ version }}.tar.gz
+  sha256: 039501789090b2604edaa7e7f76605b949a39fc0a44935805cdb1e3d205e4883
+
+build:
+  number: 0
+  noarch: generic
+  script:
+    - cp latexdiff latexdiff-vc $PREFIX/bin/
+
+requirements:
+  build:
+    - make
+  host:
+    - perl
+  run:
+    - perl
+    - perl-algorithm-diff
+
+tests:
+  - script:
+      - latexdiff --version 2>&1 | grep ${{ version }}
+      - latexdiff-vc --version
+
+about:
+  license: GPL-3.0-or-later
+  license_file: LICENSE
+  summary: Compares two latex files and marks up significant differences between them
+  homepage: https://github.com/ftilmann/latexdiff
+
+extra:
+  recipe-maintainers:
+    - tdegeus
+    - JaRoSchm
